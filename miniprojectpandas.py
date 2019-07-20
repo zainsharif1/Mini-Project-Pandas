@@ -1,5 +1,7 @@
 # We import pandas into Python
 import pandas as pd
+# We import matplotlib into Python
+import matplotlib.pyplot as plt
 
 # We read in a stock data data file into a data frame and see what it looks like
 goog_data = pd.read_csv("GOOG.csv")
@@ -64,3 +66,15 @@ print("Standard deviation stock price of AAPL is: {}\n".format(all_stocks["Apple
 print("Standard deviation stock price of AMZN is: {}\n".format(all_stocks["Amazon"].std()))
 # Print the correlation between stocks
 print("Correlation matrix:\n",all_stocks.corr())
+
+# We compute the rolling mean using a 150-Day window for Google stock
+rollingMean = google_stock.rolling(15).mean()
+
+
+# We plot the Google stock data
+plt.plot(all_stocks['Google'])
+
+# We plot the rolling mean ontop of our Google stock data
+plt.plot(rollingMean)
+plt.legend(['Google Stock Price', 'Rolling Mean'])
+plt.show()
