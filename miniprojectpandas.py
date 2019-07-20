@@ -31,3 +31,12 @@ apple_stock = apple_stock.rename(columns = {'Adj Close': 'Apple'})
 
 # Change the Adj Close column label to Amazon
 amazon_stock = amazon_stock.rename(columns = {'Adj Close': 'Amazon'})
+
+# We join the Google stock to all_stocks
+all_stocks = all_stocks.join(google_stock)
+
+# We join the Apple stock to all_stocks
+all_stocks = all_stocks.join(apple_stock)
+
+# We join the Amazon stock to all_stocks
+all_stocks = all_stocks.join(amazon_stock)
