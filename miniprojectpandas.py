@@ -16,3 +16,18 @@ print("\nAAPL.csv dataframe first 5 lines using Date as row index and Adj Close 
 # We load the Amazon stock data into a DataFrame
 amazon_stock = pd.read_csv("AMZN.csv", index_col="Date", parse_dates=True, usecols=['Date','Adj Close'])
 print("\nAMZN.csv dataframe first 5 lines using Date as row index and Adj Close as column:\n",amazon_stock.head(5))
+
+# We create calendar dates between '2000-01-01' and  '2016-12-31'
+dates = pd.date_range('2000-01-01', '2016-12-31')
+
+# We create and empty DataFrame that uses the above dates as indices
+all_stocks = pd.DataFrame(index = dates)
+
+# Change the Adj Close column label to Google
+google_stock = google_stock.rename(columns = {'Adj Close': 'Google'})
+
+# Change the Adj Close column label to Apple
+apple_stock = apple_stock.rename(columns = {'Adj Close': 'Apple'})
+
+# Change the Adj Close column label to Amazon
+amazon_stock = amazon_stock.rename(columns = {'Adj Close': 'Amazon'})
