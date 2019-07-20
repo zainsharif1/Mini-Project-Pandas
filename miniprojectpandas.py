@@ -40,3 +40,12 @@ all_stocks = all_stocks.join(apple_stock)
 
 # We join the Amazon stock to all_stocks
 all_stocks = all_stocks.join(amazon_stock)
+
+# Check if there are any NaN values in the all_stocks dataframe
+print("\nPre cleanup there are a total of {} NaN values in the all_stock dataframe".format(all_stocks.isna().sum().sum()))
+
+# Remove any rows that contain NaN values
+all_stocks = all_stocks.dropna(axis=0)
+
+#Check to see if there are any NaN values post data cleanup
+print("\nPost cleanup there are a total of {} NaN values in all_stock dataframe".format(all_stocks.isna().sum().sum()))
