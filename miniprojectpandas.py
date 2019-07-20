@@ -49,3 +49,18 @@ all_stocks = all_stocks.dropna(axis=0)
 
 #Check to see if there are any NaN values post data cleanup
 print("\nPost cleanup there are a total of {} NaN values in all_stock dataframe".format(all_stocks.isna().sum().sum()))
+
+# Print the average stock price for each stock
+print("\nMean stock price of GOOG is: {}\n".format(all_stocks["Google"].mean()))
+print("Mean stock price of AAPL is: {}\n".format(all_stocks["Apple"].mean()))
+print("Mean stock price of AMZN is: {}\n".format(all_stocks["Amazon"].mean()))
+# Print the median stock price for each stock
+print("Median stock price of GOOG is: {}\n".format(all_stocks["Google"].median()))
+print("Median stock price of AAPL is: {}\n".format(all_stocks["Apple"].median()))
+print("Median stock price of AMZN is: {}\n".format(all_stocks["Amazon"].median()))
+# Print the standard deviation of the stock price for each stock
+print("Standard deviation stock price of GOOG is: {}\n".format(all_stocks["Google"].std()))
+print("Standard deviation stock price of AAPL is: {}\n".format(all_stocks["Apple"].std()))
+print("Standard deviation stock price of AMZN is: {}\n".format(all_stocks["Amazon"].std()))
+# Print the correlation between stocks
+print("Correlation matrix:\n",all_stocks.corr())
